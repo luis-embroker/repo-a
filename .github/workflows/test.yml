@@ -1,0 +1,19 @@
+name: Run Repo B Tests and Deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-tests:
+    uses: luis-embroker/repo-b/.github/workflows/test.yml@main
+    with:
+      environment: staging
+
+  handle-result:
+    needs: call-tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show test summary
+        run: |
+          echo "Summary from repo-b:"
+          echo "${{ needs.call-tests.outputs.test_summary }}"
