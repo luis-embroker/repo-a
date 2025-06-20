@@ -8,6 +8,8 @@ jobs:
     uses: luis-embroker/repo-b/.github/workflows/test.yml@main
     with:
       environment: staging
+      run_test: true
+      run_upload: false
 
   handle-result:
     needs: call-tests
@@ -15,5 +17,9 @@ jobs:
     steps:
       - name: Show test summary
         run: |
-          echo "Summary from repo-b:"
+          echo "Test Summary from repo-b:"
           echo "${{ needs.call-tests.outputs.test_summary }}"
+      - name: Show upload summary
+        run: |
+          echo "Upload summary from repo-b:"
+          echo "${{ needs.call-tests.outputs.upload-results_upload }}"
