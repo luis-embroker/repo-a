@@ -5,21 +5,9 @@ on:
 
 jobs:
   call-tests:
-    uses: luis-embroker/repo-b/.github/workflows/test.yml@main
+    uses: luis-embroker/ams-qa/.github/workflows/ams-qa.yml@main
     with:
       environment: staging
-      run_test: true
-      run_upload: false
+      upload_testrail: true
 
-  handle-result:
-    needs: call-tests
-    runs-on: ubuntu-latest
-    steps:
-      - name: Show test summary
-        run: |
-          echo "Test Summary from repo-b:"
-          echo "${{ needs.call-tests.outputs.test_summary }}"
-      - name: Show upload summary
-        run: |
-          echo "Upload summary from repo-b:"
-          echo "${{ needs.call-tests.outputs.upload-results_upload }}"
+ 
