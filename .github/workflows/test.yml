@@ -9,5 +9,6 @@ jobs:
     with:
       environment: staging
       upload_testrail: true
+      repository: luis-embroker/repo-b
 
  
