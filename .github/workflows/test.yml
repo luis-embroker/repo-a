@@ -10,4 +10,8 @@ jobs:
       environment: staging
       upload_testrail: true
 
+    secrets:
+      CUCUMBER_CREDENTIALS_STAGING: ${{ secrets.CUCUMBER_CREDENTIALS_STAGING }}
+      CUCUMBER_SF_JWT_KEY_STAGING: ${{ secrets.CUCUMBER_SF_JWT_KEY_STAGING }}
+
  
