@@ -5,7 +5,7 @@ on:
 
 jobs:
   call-tests:
-    uses: luis-embroker/repo-b/.github/workflows/test.yml@main
+    uses: luis-embroker/repo-b/.github/workflows/ams-qa.yml@main
     with:
       environment: staging
       upload_testrail: true
