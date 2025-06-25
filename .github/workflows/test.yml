@@ -9,3 +9,4 @@ jobs:
     with:
       environment: staging
       upload_testrail: true
+    secrets: inherit
