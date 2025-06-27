@@ -10,6 +10,3 @@ jobs:
       environment: staging
       upload_testrail: true
     secrets: inherit
-    permissions:
-      contents: read
-      actions: read
